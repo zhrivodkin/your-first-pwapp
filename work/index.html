@@ -23,9 +23,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather PWA</title>
   <link rel="stylesheet" type="text/css" href="styles/inline.css">
-
-  <!-- TODO add manifest here -->
-  
+  <link rel="manifest" href="/manifest.json">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Weather PWA">
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#2F3BA2">
+  <meta name="theme-color" content="#2F3BA2">
 </head>
 <body>
 
@@ -164,8 +170,21 @@
     </svg>
   </div>
 
-  <!-- Uncomment the line below when ready to test with fake data -->
-  <!--<script src="scripts/app.js" async></script>-->
+  <script src="https://www.gstatic.com/firebasejs/4.1.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDdnMMW6cSxDA3oGfYBqkWEcA1ABKXgTpA",
+      authDomain: "pwa-test-ca266.firebaseapp.com",
+      databaseURL: "https://pwa-test-ca266.firebaseio.com",
+      projectId: "pwa-test-ca266",
+      storageBucket: "pwa-test-ca266.appspot.com",
+      messagingSenderId: "384898534726"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script src="scripts/app.js" async></script>
 
 </body>
 </html>
